@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react'
+import CommentsList from './CommentsList'
 
 class Article extends Component {
     state = {
@@ -17,6 +18,7 @@ class Article extends Component {
             <div>
                 <h3 onClick = {this.handleClick}>{title}</h3>
                 {textItem}
+                <CommentsList toggle={this.state.isOpen}    /> 
             </div>
         )
     }
@@ -26,6 +28,7 @@ class Article extends Component {
             isOpen : !this.state.isOpen
         })
     }
+
 }
 
 
