@@ -3,21 +3,28 @@ import Comment from './Comment'
 
 class CommentsList extends Component {
 
+  state = {
+        isOpen: false
+    }
     render() {
         const { toggle } = this.props;
-        const commentHeading = toggle ? < h4 > Show Comments < /h4> : null;
-
+        const comments = this.props.comments;
+        const commentHeading = toggle ? < h4  onClick = { this.handleClickComment }> Show Comments < /h4> : null;
+        console.log(comments);
+        //const commentItem = comments.map((comment) => <div key={comment.id}>{comment.id}</div>)
         return ( 
-        < div onClick = { this.handleClickComment } > 
+        < div > 
         	{ commentHeading } 
-        	<Comment  />
+        	<Comment  toggle={this.state.isOpen} />
+
         < /div>
-       
         )
     }
 
     handleClickComment = (ev) => {
-        console.log('sss');
+         this.setState({
+            isOpen : !this.state.isOpen
+        })
     }
 
 

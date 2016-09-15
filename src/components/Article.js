@@ -11,14 +11,14 @@ class Article extends Component {
         const { article } = this.props
         if (!article) return <h3>No article</h3>
 
-        const { title, text, id } = article
+        const { title, text, id, comments } = article
         const { isOpen } = this.state
         const textItem = isOpen ? <section>{text}</section> : null
         return (
             <div>
                 <h3 onClick = {this.handleClick}>{title}</h3>
                 {textItem}
-                <CommentsList toggle={this.state.isOpen}    /> 
+                <CommentsList toggle={this.state.isOpen} comments = {comments}   /> 
             </div>
         )
     }
