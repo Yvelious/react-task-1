@@ -8,15 +8,27 @@ class CommentsList extends Component {
     }
     render() {
         const { toggle } = this.props;
-        const comments = this.props.comments;
+
+         
+        console.log(this.props.comments);
+        console.log(this.props.co.comments);
+        var t = [];
+        if(this.props.co.comments) {
+             t = this.props.co.comments.slice(); 
+        }
+        
+    
+
         const commentHeading = toggle ? < h4  onClick = { this.handleClickComment }> Show Comments < /h4> : null;
-        console.log(comments);
         //const commentItem = comments.map((comment) => <div key={comment.id}>{comment.id}</div>)
+        const comments = t.map((comment) => <li key={comment.id}>1</li>)
+
+
         return ( 
         < div > 
         	{ commentHeading } 
         	<Comment  toggle={this.state.isOpen} />
-
+            {comments}
         < /div>
         )
     }

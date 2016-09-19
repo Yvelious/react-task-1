@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 
 class Comment extends Component {
 	state = {
-        isOpen: false
+        isOpen: true 
     }
 
     render() {

@@ -18,7 +18,7 @@ class Article extends Component {
             <div>
                 <h3 onClick = {this.handleClick}>{title}</h3>
                 {textItem}
-                <CommentsList toggle={this.state.isOpen} comments = {comments}   /> 
+                <CommentsList toggle={this.state.isOpen} comments = {article.comments || []}  co = {article}   /> 
             </div>
         )
     }
